@@ -1,0 +1,100 @@
+SELECT * FROM tutorial.billboard_top_100_year_end
+(Views the entire data set.)
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ ORDER BY year DESC, year_rank
+   (order by year descending and the rank of the song at the end of the listed year)
+   
+   SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE "group" LIKE 'Snoop%'
+  (searching for groups with the name of Snoop%, % meaning any # of characters coming after the word snoop)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist ILIKE 'dr_ke'
+  (_ = searching for a specific phrase with an unknown missing letter)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank IN (1, 2, 3)
+  (searching for categories that fall under the year_rank of 1,2, and 3)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
+  (searching through the query for these three artists)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank BETWEEN 5 AND 10
+  (searching for these artists between these yearly ranks)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist IS NULL
+  (Some songs are not listed under artist, but instead as a group. If in a group, the artist section is left blank)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2012 AND year_rank <= 10
+    (Searching for songs with two criteria of being made in 2012, and having a yearly rank less than or equal to 10)
+    
+    SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2012
+   AND year_rank <= 10
+   AND "group" ILIKE '%feat%'
+  (Searching for songs with the crtieria of being in 2012, having a year_rank of < or = to 10 and with the word %feat% in it ignoring casing ILIKE)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank = 5 OR artist = 'Gotye'
+(Searching for criteria with year rank of 5 and an artist name Gotye)
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+   AND ("group" ILIKE '%macklemore%' OR "group" ILIKE '%timberlake%')
+(Searching for artist with any casing of Macklemore and Timberlake, with any # of characters before and after it.)
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+   AND year_rank NOT BETWEEN 2 AND 3
+  (Searching for year_rank excludding 2 and 3, cannot use <> with NOT)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+   AND "group" NOT ILIKE '%macklemore%'
+(searching for groups not including %Macklemore%)
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+   AND artist IS NOT NULL
+(This will query all artists in 2013 and have an artist written down instead of left blank)
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ ORDER BY artist
+  (ordering the query by artists)
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+ ORDER BY year_rank
+(Ordering by year rank)
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+ ORDER BY year_rank DESC
+(ordering by descending year_rank)
+
+
+  
+  
+  
